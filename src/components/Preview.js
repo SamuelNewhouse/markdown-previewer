@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class Preview extends Component {
-  render() {
-    return <div />
+const Preview = ({ htmlString }) => {
+  return <div dangerouslySetInnerHTML={{ __html: htmlString }} ></div>
+}
+
+const mapStateToProps = state => {
+  return {
+    htmlString: state.output
   }
 }
 
-export default Preview;
+export default connect(mapStateToProps)(Preview);
