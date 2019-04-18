@@ -23,7 +23,10 @@ const initialState = { input: "", output: "" };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_INPUT:
-      return Object.assign({}, state, { input: action.input });
+      return Object.assign({}, state, {
+        input: action.input,
+        output: marked(action.input)
+      });
     default:
       return state;
   }
