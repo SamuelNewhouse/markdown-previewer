@@ -18,7 +18,7 @@ marked.setOptions({
   sanitize: true
 });
 
-const initialState = { input: "" };
+const initialState = { input: "", output: "" };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
