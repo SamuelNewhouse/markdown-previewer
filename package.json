@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "marked": "*",
     "react": "*",
     "react-dom": "*",
     "react-redux": "*",
     "react-scripts": "*",
-    "redux": "^4.0.1"
+    "redux": "*"
   },
   "scripts": {
     "start": "react-scripts start",
