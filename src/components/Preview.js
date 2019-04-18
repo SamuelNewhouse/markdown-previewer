@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Preview = ({ htmlString }) => {
-  return <div dangerouslySetInnerHTML={{ __html: htmlString }} ></div>
+  return <div id="preview" dangerouslySetInnerHTML={{ __html: htmlString }} ></div>
 }
 
 const mapStateToProps = state => {
