@@ -3,7 +3,12 @@ import { updateInput } from '../actions/index';
 import { connect } from 'react-redux';
 
 const Editor = ({ value, onChange }) => {
-  return <textarea id="editor" value={value} onChange={onChange} />
+  return <textarea
+    className="m-3 bg-dark text-white border border-primary p-2"
+    id="editor"
+    value={value}
+    onChange={onChange}
+  />
 }
 
 const mapStateToProps = state => {
