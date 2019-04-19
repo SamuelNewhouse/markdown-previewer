@@ -4,9 +4,11 @@ import Preview from './Preview';
 import { updateInput } from '../actions';
 import { connect } from 'react-redux';
 
-const introMarkDown = `
-# Markdown Previewer
-## A [freecodecamp.org](https://www.freecodecamp.org) project
+const introMarkDown =
+  `# Markdown Previewer
+## A freecodecamp.org project
+
+See [freecodecamp.org](https://www.freecodecamp.org)
 
 Here's some \`inline code\`
 
@@ -23,10 +25,9 @@ Here's some \`inline code\`
 > This is a block quote
 
 Here's an image
-![alt text here](https://lorempixel.com/600/200/technics/4)
+![alt text here](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Codinglogo.jpg/480px-Codinglogo.jpg)
 
-**Here's some bold text**
-`;
+**Here's some bold text**`;
 
 class App extends Component {
   componentDidMount() {
