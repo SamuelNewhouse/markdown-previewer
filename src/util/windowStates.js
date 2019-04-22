@@ -1,0 +1,48 @@
+export const MINIMIZED = "MINIMIZED"
+export const NORMAL = "NORMAL"
+export const MAXIMIZED = "MAXIMIZED"
+
+const getLargerWindowState = windowState => {
+  switch (windowState) {
+    case MINIMIZED:
+      return NORMAL;
+    case NORMAL:
+      return MAXIMIZED;
+    default:
+      return windowState;
+  }
+}
+
+const getSmallerWindowState = windowState => {
+  switch (windowState) {
+    case MAXIMIZED:
+      return NORMAL;
+    case NORMAL:
+      return MINIMIZED;
+    default:
+      return windowState;
+  }
+}
+
+export const createWindowStatesFromShrink = (editorState, previewState, windowFocus) => {
+  if (windowFocus === 'editor')
+    editorState = getSmallerWindowState(editorState);
+  else if (windowFocus === 'preview')
+    previewState = getSmallerWindowState(previewState);
+
+  return {editor: editorState, preview: previewState};
+}
+
+export const createWindowStatesFromEnlarge = (editorState, previewState, windowFocus) => {
+  if (windowFocus === 'editor')
+    editorState = getLargerWindowState(editorState);
+  else if (windowFocus === 'preview')
+    previewState = getLargerWindowState(previewState);
+
+  if (editorState === MAXIMIZED)
+    previewState = MINIMIZED;
+  else if (previewState === MAXIMIZED)
+    editorState = MINIMIZED;
+
+  return {editor: editorState, preview: previewState};
+}
