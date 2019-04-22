@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const Preview = ({ htmlString }) => {
   return <div
-    className="m-3 bg-light text-dark border border-secondary p-2"
+    className="m-3 bg-light text-dark border border-secondary p-2 content"
     id="preview"
     dangerouslySetInnerHTML={{ __html: htmlString }}
   />
