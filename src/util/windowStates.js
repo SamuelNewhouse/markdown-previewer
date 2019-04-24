@@ -25,24 +25,35 @@ const getSmallerWindowState = windowState => {
 }
 
 export const createWindowStatesFromShrink = (editorState, previewState, windowFocus) => {
+  console.log("focus: ", windowFocus);
   if (windowFocus === 'editor')
     editorState = getSmallerWindowState(editorState);
   else if (windowFocus === 'preview')
     previewState = getSmallerWindowState(previewState);
 
-  return {editor: editorState, preview: previewState};
+  console.log("shrink: ", editorState, previewState);
+  return { editor: editorState, preview: previewState };
 }
 
 export const createWindowStatesFromEnlarge = (editorState, previewState, windowFocus) => {
-  if (windowFocus === 'editor')
+  console.log("focus: ", windowFocus);
+  if (windowFocus === 'editor') {
     editorState = getLargerWindowState(editorState);
-  else if (windowFocus === 'preview')
+
+    if (editorState === MAXIMIZED)
+      previewState = MINIMIZED;
+    else if (previewState === MAXIMIZED)
+      previewState = NORMAL;
+  }
+  else if (windowFocus === 'preview') {
     previewState = getLargerWindowState(previewState);
 
-  if (editorState === MAXIMIZED)
-    previewState = MINIMIZED;
-  else if (previewState === MAXIMIZED)
-    editorState = MINIMIZED;
+    if (previewState === MAXIMIZED)
+      editorState = MINIMIZED;
+    else if (editorState === MAXIMIZED)
+      editorState = NORMAL;
+  }
 
-  return {editor: editorState, preview: previewState};
+  console.log("enlarge: ", editorState, previewState);
+  return { editor: editorState, preview: previewState };
 }
