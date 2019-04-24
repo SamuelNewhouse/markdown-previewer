@@ -12,6 +12,29 @@
 
 .content {
   flex: 1 1 0;
+
+  &.minimized {
+    overflow: hidden;
+    flex: 0 1 auto;
+
+    .title {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .window-bar {
+      flex-direction: column;
+    }
+
+    #editor, #preview {
+      display: none;
+    }
+  }
+
+  &.normal {
+    flex: 1 1 0;
+    max-width: 50%;
+  }
 }
 
 .window-bar {
@@ -38,5 +61,26 @@ blockquote {
   }
   #editor, #preview {
     height: 40vh;
+  }
+
+  .content {
+    &.minimized {
+      .window-bar {
+        flex-direction: row;
+      }
+      .title {
+        margin-left: unset;
+        margin-right: unset;
+      }
+    }
+    &.normal {
+      max-width: unset;
+      max-height: 50%;
+    }
+    &.maximized {
+      #editor, #preview {
+        height: 80vh;
+      }
+    }
   }
 }
