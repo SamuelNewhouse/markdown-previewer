@@ -5,6 +5,8 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "marked": "*",
+    "node-sass": "^4.11.0",
+    "rc-tooltip": "^3.7.3",
     "react": "*",
     "react-dom": "*",
     "react-redux": "*",
