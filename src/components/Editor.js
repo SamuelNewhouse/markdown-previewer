@@ -7,21 +7,20 @@ import copyIcon from '../svg/copy.svg';
 import shrinkIcon from '../svg/shrink2.svg';
 import enlargeIcon from '../svg/enlarge2.svg';
 
-const bar = {
-  info: {
-    icon: editorIcon,
-    title: 'Editor',
-    name: 'editor'
-  },
-  buttons: [
-    {title: 'Copy', icon: copyIcon, onClick: 'PLACEHOLDEr'},
-    {title: 'Shrink', icon: shrinkIcon, onClick: 'PLACEHOLDEr'},
-    {title: 'Enlarge', icon: enlargeIcon, onClick: 'PLACEHOLDEr'}
-  ]
+const Editor = ({ value, onChange, onShrink, onEnlarge }) => {
+  const bar = {
+    info: {
+      icon: editorIcon,
+      title: 'Editor',
+      name: 'editor'
+    },
+    buttons: [
+      {title: 'Copy Markdown', icon: copyIcon, onClick: () => {console.log("--Copy Markdown--")}},
+      {title: 'Shrink', icon: shrinkIcon, onClick: onShrink},
+      {title: 'Enlarge', icon: enlargeIcon, onClick: onEnlarge}
+    ]
+  }
 
-}
-
-const Editor = ({ value, onChange }) => {
   return (
     <div className="m-3 content">
       <WindowBar bar={bar} />
