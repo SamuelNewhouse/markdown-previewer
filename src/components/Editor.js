@@ -43,7 +43,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onChange: event => dispatch(updateInput(event.target.value))
+    onChange: event => dispatch(updateInput(event.target.value)),
+    onShrink: () => dispatch(shrinkWindow('editor')),
+    onEnlarge: () => dispatch(enlargeWindow('editor'))
   }
 }
 
