@@ -1,6 +1,6 @@
 import React from 'react';
-import { updateInput } from '../actions/index';
 import { connect } from 'react-redux';
+import { updateInput, shrinkWindow, enlargeWindow } from '../actions/index';
 import WindowBar from './common/WindowBar'
 import editorIcon from '../svg/pencil.svg';
 import copyIcon from '../svg/copy.svg';
