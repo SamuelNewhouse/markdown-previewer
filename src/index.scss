@@ -30,11 +30,6 @@
       display: none;
     }
   }
-
-  &.normal {
-    flex: 1 1 0;
-    max-width: 50%;
-  }
 }
 
 .window-bar {
@@ -59,12 +54,12 @@ blockquote {
   #root {
     flex-direction: column;
   }
-  #editor, #preview {
-    height: 40vh;
-  }
-
   .content {
     &.minimized {
+      #editor, #preview {
+        height: 0px;
+      }
+
       .window-bar {
         flex-direction: row;
       }
@@ -73,13 +68,14 @@ blockquote {
         margin-right: unset;
       }
     }
-    &.normal {
-      max-width: unset;
-      max-height: 50%;
-    }
     &.maximized {
       #editor, #preview {
         height: 80vh;
+      }
+    }
+    &.split {
+      #editor, #preview {
+        height: 40vh;
       }
     }
   }

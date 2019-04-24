@@ -1,54 +1,58 @@
 export const MINIMIZED = "MINIMIZED"
-export const NORMAL = "NORMAL"
 export const MAXIMIZED = "MAXIMIZED"
-
-const getLargerWindowState = windowState => {
-  switch (windowState) {
-    case MINIMIZED:
-      return NORMAL;
-    case NORMAL:
-      return MAXIMIZED;
-    default:
-      return windowState;
-  }
-}
-
-const getSmallerWindowState = windowState => {
-  switch (windowState) {
-    case MAXIMIZED:
-      return NORMAL;
-    case NORMAL:
-      return MINIMIZED;
-    default:
-      return windowState;
-  }
-}
+export const SPLIT = "SPLIT"
 
 export const createWindowStatesFromShrink = (editorState, previewState, windowFocus) => {
-  if (windowFocus === 'editor')
-    editorState = getSmallerWindowState(editorState);
-  else if (windowFocus === 'preview')
-    previewState = getSmallerWindowState(previewState);
+  if(editorState === SPLIT) {
+    editorState = MAXIMIZED;
+    previewState = MAXIMIZED;
+  }
+
+  if (windowFocus === 'editor') {
+    if (previewState === MINIMIZED)
+      previewState = MAXIMIZED;
+    else
+      editorState = MINIMIZED;
+  }
+  else {
+    if (editorState === MINIMIZED)
+      editorState = MAXIMIZED;
+    else
+      previewState = MINIMIZED;
+  }
+
+  if(editorState === previewState) {
+    editorState = SPLIT;
+    previewState = SPLIT;
+  }
 
   return { editor: editorState, preview: previewState };
 }
 
 export const createWindowStatesFromEnlarge = (editorState, previewState, windowFocus) => {
+  if(editorState === SPLIT) {
+    editorState = MAXIMIZED;
+    previewState = MAXIMIZED;
+  }
+
   if (windowFocus === 'editor') {
-    editorState = getLargerWindowState(editorState);
-
-    if (editorState === MAXIMIZED)
+    if (editorState === MINIMIZED)
+      editorState = MAXIMIZED;
+    else
       previewState = MINIMIZED;
-    else if (previewState === MAXIMIZED)
-      previewState = NORMAL;
   }
-  else if (windowFocus === 'preview') {
-    previewState = getLargerWindowState(previewState);
-
-    if (previewState === MAXIMIZED)
+  else {
+    if (previewState === MINIMIZED)
+      previewState = MAXIMIZED;
+    else
       editorState = MINIMIZED;
-    else if (editorState === MAXIMIZED)
-      editorState = NORMAL;
   }
+
+  if(editorState === previewState) {
+    editorState = SPLIT;
+    previewState = SPLIT;
+  }
+
+
   return { editor: editorState, preview: previewState };
 }

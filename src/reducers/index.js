@@ -1,7 +1,7 @@
 import parseMarkdown from '../util/parseMarkdown';
 import { UPDATE_INPUT, SHRINK_WINDOW, ENLARGE_WINDOW } from '../actions';
 import {
-  NORMAL,
+  SPLIT,
   createWindowStatesFromEnlarge,
   createWindowStatesFromShrink
 } from '../util/windowStates';
@@ -9,8 +9,8 @@ import {
 const initialState = {
   input: "",
   output: "",
-  editor: NORMAL,
-  preview: NORMAL
+  editor: SPLIT,
+  preview: SPLIT
 };
 
 const reducer = (state = initialState, action) => {
