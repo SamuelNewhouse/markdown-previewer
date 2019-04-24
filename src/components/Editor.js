@@ -36,7 +36,8 @@ const Editor = ({ value, onChange, onShrink, onEnlarge }) => {
 
 const mapStateToProps = state => {
   return {
-    value: state.input
+    value: state.input,
+    windowState: state.editor
   }
 }
 
