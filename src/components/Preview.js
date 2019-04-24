@@ -35,7 +35,8 @@ const Preview = ({ htmlString, onShrink, onEnlarge }) => {
 
 const mapStateToProps = state => {
   return {
-    htmlString: state.output
+    htmlString: state.output,
+    windowState: state.preview
   }
 }
 
