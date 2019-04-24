@@ -7,9 +7,9 @@ export function updateInput(input) {
 }
 
 export function shrinkWindow(window) {
-  return { type: UPDATE_INPUT, window }
+  return { type: SHRINK_WINDOW, window }
 }
 
 export function enlargeWindow(window) {
-  return { type: UPDATE_INPUT, window }
+  return { type: ENLARGE_WINDOW, window }
 }
