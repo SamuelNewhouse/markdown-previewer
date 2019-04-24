@@ -26,7 +26,7 @@ const Editor = ({ value, onChange }) => {
     <div className="m-3 content">
       <WindowBar bar={bar} />
       <textarea
-        className="bg-dark text-white border border-primary p-2"
+        className="bg-dark text-white border border-secondary p-2"
         id="editor"
         value={value}
         onChange={onChange}
