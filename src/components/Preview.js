@@ -4,6 +4,7 @@ import { shrinkWindow, enlargeWindow } from '../actions/index';
 import copyToClipboard from '../util/copyToClipboard';
 import WindowBar from './common/WindowBar'
 import previewIcon from '../svg/eye.svg';
+import mdHelp from '../svg/question.svg';
 import htmlCopyIcon from '../svg/htmlcopy.svg';
 import shrinkIcon from '../svg/shrink2.svg';
 import enlargeIcon from '../svg/enlarge2.svg';
@@ -18,6 +19,7 @@ const Preview = ({ htmlString, windowState, onShrink, onEnlarge }) => {
           name: 'preview'
         }}
         buttons={[
+          { title: 'Markdown Help', icon: mdHelp, onClick: () => { window.open('https://www.markdownguide.org', '_blank') }},
           { title: 'Copy HTML', icon: htmlCopyIcon, onClick: () => { copyToClipboard(htmlString) } },
           { title: 'Shrink', icon: shrinkIcon, onClick: onShrink },
           { title: 'Enlarge', icon: enlargeIcon, onClick: onEnlarge }
