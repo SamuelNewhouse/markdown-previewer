@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.41" clip-rule="evenodd" width="32" height="32" viewBox="0 0 32 32">
-  <path fill-rule="nonzero" d="M20 8V0H6L0 6v18h12v8h20V8H20zM6 2.83V6H2.83L6 2.83zM2 22V8h6V2h10v6l-6 6v8H2zm16-11.17V14h-3.17L18 10.83zM30 30H14V16h6v-6h10v20z"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linecap="square" stroke-miterlimit="1.5" clip-rule="evenodd" width="32" height="32" viewBox="0 0 32 32">
+  <path fill="none" stroke="#000" stroke-width="2" d="M31 6H11l-5 5v20h25V6z"/>
+  <path fill="none" stroke="#000" stroke-width="2" d="M6 1h20v5H11l-5 5v15H1V6l5-5z"/>
   <g fill-rule="nonzero">
-    <path d="M5.86 15.43L10 18.02v1.71l-5.76-3.6V14.6L10 11v1.71l-4.14 2.6v.12zM22.52 17l-5.4 12.6H15.5L20.9 17h1.62zM27.38 25l-4.14-2.6v-1.71l5.76 3.6v1.53l-5.76 3.6v-1.71l4.14-2.6V25z"/>
+    <path d="M16.09 26.9L9.7 24.13v-1.54l6.38-2.76v1.81l-4.45 1.7 4.45 1.77v1.8zM16.68 28.12l2.3-9.62h1.34l-2.33 9.62h-1.32zM20.9 26.91v-1.8l4.47-1.75-4.46-1.73v-1.78l6.38 2.76v1.52l-6.38 2.78z"/>
   </g>
 </svg>
