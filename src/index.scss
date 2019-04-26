@@ -8,13 +8,11 @@
   transition: all 0.2s ease;
 }
 
-#editor {
+#editor, #preview {
+  height: 86vh;
   width: 100%;
   resize: none;
-}
-#editor, #preview {
   overflow: auto;
-  height: 86vh;
   @extend %shadow, %transition;
 }
 
@@ -60,15 +58,14 @@ blockquote {
 }
 
 @media only screen and (max-width: 1100px) {
-  #editor, #preview {
-    height: 1vh;
-  }
-
   #root {
     flex-direction: column;
   }
   .content {
     &.minimized {
+      #editor, #preview {
+        height: 1vh;
+      }
       .window-bar {
         flex-direction: row;
       }
