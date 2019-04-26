@@ -8,8 +8,13 @@
   transition: all 0.2s ease;
 }
 
+#root {
+  display: flex;
+  height: 92vh;
+}
+
 #editor, #preview {
-  height: 86vh;
+  height: 100%;
   width: 100%;
   resize: none;
   overflow: auto;
@@ -17,19 +22,18 @@
 }
 
 .content {
+  display: flex;
   flex: 1 1 0;
+  flex-direction: column;
   &.minimized {
     flex: 0 1 auto;
-
     .title {
       margin-left: 5px;
       margin-right: 5px;
     }
-
     .window-bar {
       flex-direction: column;
     }
-
     #editor, #preview {
       display: none;
     }
@@ -38,6 +42,8 @@
 }
 
 .window-bar {
+  display: flex;
+  flex: 0 1 auto;
   .title {
     font-size: 1.75em;
     font-weight: 700;
@@ -63,25 +69,12 @@ blockquote {
   }
   .content {
     &.minimized {
-      #editor, #preview {
-        height: 1vh;
-      }
       .window-bar {
         flex-direction: row;
       }
       .title {
         margin-left: unset;
         margin-right: unset;
-      }
-    }
-    &.maximized {
-      #editor, #preview {
-        height: 80vh;
-      }
-    }
-    &.split {
-      #editor, #preview {
-        height: 40vh;
       }
     }
   }
