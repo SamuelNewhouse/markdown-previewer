@@ -5,7 +5,7 @@ class WindowBar extends Component {
   render() {
     const {icon, title} = this.props.info;
     return (
-      <div className="window-bar bg-info">
+      <div className="window-bar bg-info d-flex">
         <img className="m-2" src={icon} alt={title}></img>
         <span className="flex-grow-1 align-self-center title" >{title}</span>
         {
