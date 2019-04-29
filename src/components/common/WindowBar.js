@@ -4,7 +4,7 @@ import '../../tooltip.scss';
 
 class WindowBar extends Component {
   render() {
-    const {icon, title} = this.props.info;
+    const { icon, title } = this.props.info;
     return (
       <div className="window-bar bg-info d-flex">
         <img className="m-2" src={icon} alt={title}></img>
@@ -12,8 +12,11 @@ class WindowBar extends Component {
         {
           this.props.buttons.map(({ icon, title, onClick }) =>
             <Tooltip key={title} overlay={title} placement="bottom">
-              <img className="p-1 m-1 clickable" key={title} src={icon} alt={title} onClick={onClick}></img>
-            </Tooltip>)
+              <button type="button" className="btn btn-sm btn-info m-1" onClick={onClick}>
+                <img key={title} src={icon} alt={title}></img>
+              </button>
+            </Tooltip>
+          )
         }
       </div>
     )
