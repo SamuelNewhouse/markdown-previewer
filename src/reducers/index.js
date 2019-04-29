@@ -10,7 +10,9 @@ const initialState = {
   input: "",
   output: "",
   editor: SPLIT,
-  preview: SPLIT
+  preview: SPLIT,
+  copyID: 0,
+  copyMessage: ""
 };
 
 const reducer = (state = initialState, action) => {
