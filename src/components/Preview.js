@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { shrinkWindow, enlargeWindow } from '../actions/index';
+import { shrinkWindow, enlargeWindow, notifyCopy } from '../actions/index';
 import copyToClipboard from '../util/copyToClipboard';
 import WindowBar from './common/WindowBar'
 import previewIcon from '../svg/eye.svg';
@@ -9,7 +9,7 @@ import htmlCopyIcon from '../svg/htmlcopy.svg';
 import shrinkIcon from '../svg/shrink2.svg';
 import enlargeIcon from '../svg/enlarge2.svg';
 
-const Preview = ({ htmlString, windowState, onShrink, onEnlarge }) => {
+const Preview = ({ htmlString, windowState, onShrink, onEnlarge, onCopy }) => {
   return (
     <div className={`m-2 content ${windowState.toLowerCase()}`}>
       <WindowBar
@@ -19,8 +19,13 @@ const Preview = ({ htmlString, windowState, onShrink, onEnlarge }) => {
           name: 'preview'
         }}
         buttons={[
-          { title: 'Markdown Help', icon: mdHelp, onClick: () => { window.open('https://www.markdownguide.org', '_blank') }},
-          { title: 'Copy HTML', icon: htmlCopyIcon, onClick: () => { copyToClipboard(htmlString) } },
+          { title: 'Markdown Help', icon: mdHelp, onClick: () => {
+            window.open('https://www.markdownguide.org', '_blank')
+          }},
+          { title: 'Copy HTML', icon: htmlCopyIcon, onClick: () => {
+            copyToClipboard(htmlString);
+            onCopy('HTML copied to clipboard.');
+          }},
           { title: 'Shrink', icon: shrinkIcon, onClick: onShrink },
           { title: 'Enlarge', icon: enlargeIcon, onClick: onEnlarge }
         ]}
@@ -45,7 +50,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onShrink: () => dispatch(shrinkWindow('preview')),
-    onEnlarge: () => dispatch(enlargeWindow('preview'))
+    onEnlarge: () => dispatch(enlargeWindow('preview')),
+    onCopy: message => dispatch(notifyCopy(message))
   }
 }
 
