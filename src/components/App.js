@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Editor from './Editor';
 import Preview from './Preview';
+import CopyNotifier from './CopyNotifier';
 import { updateInput } from '../actions';
 import { connect } from 'react-redux';
 
@@ -37,6 +38,7 @@ class App extends Component {
     return <>
       <Editor />
       <Preview />
+      <CopyNotifier />
     </>
   }
 }
