@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
+import '../../tooltip.scss';
 
 class WindowBar extends Component {
   render() {
