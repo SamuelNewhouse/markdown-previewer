@@ -6,9 +6,9 @@ class WindowBar extends Component {
   render() {
     const { icon, title } = this.props.info;
     return (
-      <div className="window-bar bg-info d-flex">
+      <div className="window-bar bg-info d-flex align-items-center">
         <img className="m-2" src={icon} alt={title}></img>
-        <span className="flex-grow-1 align-self-center title" >{title}</span>
+        <span className="flex-grow-1 title" >{title}</span>
         {
           this.props.buttons.map(({ icon, title, onClick }) =>
             <Tooltip key={title} overlay={title} placement="bottom">

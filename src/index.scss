@@ -1,7 +1,7 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-
 $windowBarHeight: 54px;
+$svg-size: 32px;
 
 %boxShadow {
   box-shadow: 2px 2px 2px #000;
@@ -21,6 +21,16 @@ blockquote {
   padding-left: 0.5em;
 }
 
+.btn:focus {
+  box-shadow: 0 0 4px black;
+}
+
+#root {
+  @media only screen and (max-width: 1100px) {
+    flex-direction: column;
+  }
+}
+
 #editor, #preview {
   height: calc(100vh - #{$windowBarHeight * 1.75});
   width: 100%;
@@ -31,6 +41,7 @@ blockquote {
 
 .content {
   flex: 1 1 0;
+
   &.minimized {
     flex: 0 1 auto;
     .title {
@@ -44,25 +55,11 @@ blockquote {
       display: none;
     }
   }
-  @extend %transition;
-}
 
-.window-bar {
-  .title {
-    font-size: 1.75em;
-    font-weight: 700;
-  }
-  @extend %boxShadow;
-}
-
-@media only screen and (max-width: 1100px) {
-  #root {
-    flex-direction: column;
-  }
-  .content {
+  @media only screen and (max-width: 1100px) {
     &.split {
       #editor, #preview {
-        height: calc(49.5vh - #{$windowBarHeight * 1.5});
+        height: calc(50vh - #{$windowBarHeight * 1.5});
       }
     }
 
@@ -81,12 +78,46 @@ blockquote {
 
     &.maximized {
       #editor, #preview {
-        height: calc(99vh - #{$windowBarHeight * 3});
+        height: calc(100vh - #{$windowBarHeight * 3});
       }
     }
   }
+  @extend %transition;
 }
 
-.btn:focus {
-  box-shadow: 0 0 4px black;
+.window-bar {
+  .title {
+    font-size: 1.75em;
+    font-weight: 700;
+  }
+
+  button {
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+    max-width: $svg-size;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .title {
+      font-size: 1.45em;
+    }
+    img {
+      max-width: $svg-size / 1.5;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .title {
+      font-size: 1.25em;
+    }
+    img {
+      max-width: $svg-size / 2;
+      min-width: $svg-size / 3;
+    }
+  }
+
+  @extend %boxShadow;
 }
