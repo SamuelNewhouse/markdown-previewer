@@ -1,5 +1,9 @@
 import parseMarkdown from '../util/parseMarkdown';
-import { UPDATE_INPUT, SHRINK_WINDOW, ENLARGE_WINDOW } from '../actions';
+import {
+  UPDATE_INPUT,
+  SHRINK_WINDOW,
+  ENLARGE_WINDOW,
+  NOTIFY_COPY } from '../actions';
 import {
   SPLIT,
   createWindowStatesFromEnlarge,
@@ -31,6 +35,12 @@ const reducer = (state = initialState, action) => {
     case ENLARGE_WINDOW:
       return Object.assign({}, state,
         createWindowStatesFromEnlarge(state.editor, state.preview, action.window));
+
+    case NOTIFY_COPY:
+      return Object.assign({}, state, {
+        copyID: state.copyID + 1,
+        copyMessage: action.message
+      });
 
     default:
       return state;
