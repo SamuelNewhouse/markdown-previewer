@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/SamuelNewhouse/markdown-previewer/static/css/main.cb9a9504.chunk.css",
+    "main.js": "/SamuelNewhouse/markdown-previewer/static/js/main.7e4f7734.chunk.js",
+    "main.js.map": "/SamuelNewhouse/markdown-previewer/static/js/main.7e4f7734.chunk.js.map",
+    "runtime~main.js": "/SamuelNewhouse/markdown-previewer/static/js/runtime~main.7175dfe9.js",
+    "runtime~main.js.map": "/SamuelNewhouse/markdown-previewer/static/js/runtime~main.7175dfe9.js.map",
+    "static/css/2.647cd933.chunk.css": "/SamuelNewhouse/markdown-previewer/static/css/2.647cd933.chunk.css",
+    "static/js/2.9d3fa9ef.chunk.js": "/SamuelNewhouse/markdown-previewer/static/js/2.9d3fa9ef.chunk.js",
+    "static/js/2.9d3fa9ef.chunk.js.map": "/SamuelNewhouse/markdown-previewer/static/js/2.9d3fa9ef.chunk.js.map",
+    "index.html": "/SamuelNewhouse/markdown-previewer/index.html",
+    "precache-manifest.600bdf11ab36e5db129ea227edada3df.js": "/SamuelNewhouse/markdown-previewer/precache-manifest.600bdf11ab36e5db129ea227edada3df.js",
+    "service-worker.js": "/SamuelNewhouse/markdown-previewer/service-worker.js",
+    "static/css/2.647cd933.chunk.css.map": "/SamuelNewhouse/markdown-previewer/static/css/2.647cd933.chunk.css.map",
+    "static/css/main.cb9a9504.chunk.css.map": "/SamuelNewhouse/markdown-previewer/static/css/main.cb9a9504.chunk.css.map",
+    "static/media/enlarge2.svg": "/SamuelNewhouse/markdown-previewer/static/media/enlarge2.d663d5d7.svg",
+    "static/media/eye.svg": "/SamuelNewhouse/markdown-previewer/static/media/eye.6955fcfe.svg",
+    "static/media/htmlcopy.svg": "/SamuelNewhouse/markdown-previewer/static/media/htmlcopy.cb244187.svg",
+    "static/media/mdcopy.svg": "/SamuelNewhouse/markdown-previewer/static/media/mdcopy.b2c3197e.svg",
+    "static/media/pencil.svg": "/SamuelNewhouse/markdown-previewer/static/media/pencil.8809d3cf.svg",
+    "static/media/question.svg": "/SamuelNewhouse/markdown-previewer/static/media/question.7905d19e.svg",
+    "static/media/shrink2.svg": "/SamuelNewhouse/markdown-previewer/static/media/shrink2.2e08aa9f.svg"
+  }
+}
